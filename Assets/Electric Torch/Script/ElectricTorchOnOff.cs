@@ -15,9 +15,10 @@ public class ElectricTorchOnOff : MonoBehaviour
 
     public LightChoose modoLightChoose;
     public bool _PowerPickUp = false;
-    public float intensityLight = 2.5F;
+    public float intensityLight = 2.5f;
     private bool _flashLightOn = false; // Tracks light state
-    [SerializeField] float _lightTime = 0.05f;
+    [SerializeField] float _lightTime = 10.0f; // Time before battery runs out
+    private float _lightTimer; // Internal timer for battery operation
 
     private void Awake()
     {
@@ -44,32 +45,63 @@ public class ElectricTorchOnOff : MonoBehaviour
         GetComponent<Light>().intensity = 0.0f; // Turn light off
         _flashLightOn = false;                 // Ensure the flag matches the state
         _emissionMaterialFade?.OffEmission();  // Disable emission material
+
+        _lightTimer = _lightTime; // Initialize the timer
+    }
+
+    void Update()
+    {
+        if (modoLightChoose == LightChoose.withBattery && _flashLightOn)
+        {
+            // Decrease the timer while the light is on
+            _lightTimer -= Time.deltaTime;
+
+            if (_lightTimer <= 0.0f)
+            {
+                // Time expired, turn off the light
+                TurnOffLight();
+            }
+        }
     }
 
     void ToggleLight()
     {
-        _flashLightOn = !_flashLightOn;
-
         if (_flashLightOn)
         {
-            if (modoLightChoose == LightChoose.noBattery)
-            {
-                GetComponent<Light>().intensity = intensityLight;
-                _emissionMaterialFade?.OnEmission();
-            }
-            else if (modoLightChoose == LightChoose.withBattery)
-            {
-                GetComponent<Light>().intensity = intensityLight;
-            }
+            TurnOffLight();
         }
         else
         {
-            GetComponent<Light>().intensity = 0.0f;
-            _emissionMaterialFade?.OffEmission();
+            TurnOnLight();
+        }
+    }
+
+    void TurnOnLight()
+    {
+        if (modoLightChoose == LightChoose.noBattery || _lightTimer > 0.0f)
+        {
+            _flashLightOn = true;
+            GetComponent<Light>().intensity = intensityLight;
+            _emissionMaterialFade?.OnEmission();
+        }
+    }
+
+    void TurnOffLight()
+    {
+        _flashLightOn = false;
+        GetComponent<Light>().intensity = 0.0f;
+        _emissionMaterialFade?.OffEmission();
+    }
+
+    public void RechargeBattery(float additionalTime)
+    {
+        if (modoLightChoose == LightChoose.withBattery)
+        {
+            _lightTimer += additionalTime;
+            _lightTimer = Mathf.Clamp(_lightTimer, 0.0f, _lightTime); // Ensure it doesn't exceed the initial max time
         }
     }
 }
-
 
 
 

@@ -1,30 +1,47 @@
-﻿// - BatteryPowerPickup - Script by Marcelli Michele
-// Attach this script on a GameObject (battery pickup) with collider component
-
-
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class BatteryPowerPickup : MonoBehaviour
 {
-    ElectricTorchOnOff _torchOnOff;
-    //
-    public float PowerIntensityLight;
+    [SerializeField] private float batteryTime = 10.0f; // Time added to the torch when picked up
+    private ElectricTorchOnOff torchScript; // Reference to the torch script
+    private XRGrabInteractable grabInteractable; // Reference to the grab interactable
 
     private void Awake()
     {
-        _torchOnOff = FindObjectOfType<ElectricTorchOnOff>();
+        // Find the torch in the scene
+        torchScript = FindObjectOfType<ElectricTorchOnOff>();
+        // Get the XRGrabInteractable component
+        grabInteractable = GetComponent<XRGrabInteractable>();
     }
-    void OnTriggerEnter(Collider other)
+
+    private void OnEnable()
     {
-        if (other)
+        if (grabInteractable != null)
         {
-            _torchOnOff._PowerPickUp = true;
-            _torchOnOff.intensityLight = PowerIntensityLight;
+            // Subscribe to the select entered event
+            grabInteractable.selectEntered.AddListener(OnGrabbed);
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnDisable()
     {
-        _torchOnOff._PowerPickUp = false;
+        if (grabInteractable != null)
+        {
+            // Unsubscribe from the select entered event
+            grabInteractable.selectEntered.RemoveListener(OnGrabbed);
+        }
+    }
+
+    private void OnGrabbed(SelectEnterEventArgs args)
+    {
+        // Recharge the torch's battery
+        if (torchScript != null)
+        {
+            torchScript.RechargeBattery(batteryTime);
+        }
+
+        // Destroy the battery object after it has been grabbed
+        Destroy(gameObject);
     }
 }
