@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\parme\\Documents\\uni\\VR\\VR Project\\VR Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parme\\Documents\\uni\\VR\\VR Project\\VR Project\\Assets\\Samples\\XR Interaction Toolkit\\2.5.4\\Starter Assets\\Editor\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.asmdef||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Samples\\XR Interaction Toolkit\\2.5.4\\Starter Assets\\Editor\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.asmdef||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parme\\Documents\\uni\\VR\\VR Project\\VR Project\\Assets\\Electric Torch\\Script\\ElectricTorchOnOff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Electric Torch\\Script\\ElectricTorchOnOff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.asmdef",
+              "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VR Project\\VR Project\\Assets\\Samples\\XR Interaction Toolkit\\2.5.4\\Starter Assets\\Editor\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.asmdef",
+              "RelativeDocumentMoniker": "Assets\\Samples\\XR Interaction Toolkit\\2.5.4\\Starter Assets\\Editor\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.asmdef",
+              "ToolTip": "C:\\Users\\parme\\Documents\\uni\\VR\\VR Project\\VR Project\\Assets\\Samples\\XR Interaction Toolkit\\2.5.4\\Starter Assets\\Editor\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.asmdef",
+              "RelativeToolTip": "Assets\\Samples\\XR Interaction Toolkit\\2.5.4\\Starter Assets\\Editor\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.asmdef",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-23T14:07:13.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "EmissionMaterialGlassTorchFadeOut.cs",
               "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VR Project\\VR Project\\Assets\\Electric Torch\\Script\\EmissionMaterialGlassTorchFadeOut.cs",
               "RelativeDocumentMoniker": "Assets\\Electric Torch\\Script\\EmissionMaterialGlassTorchFadeOut.cs",
@@ -38,12 +55,11 @@
               "RelativeToolTip": "Assets\\Electric Torch\\Script\\EmissionMaterialGlassTorchFadeOut.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T23:48:15.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T23:48:15.298Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UseExampleScript.cs",
               "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VR Project\\VR Project\\Assets\\Scripts\\UseExampleScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UseExampleScript.cs",
@@ -51,12 +67,11 @@
               "RelativeToolTip": "Assets\\Scripts\\UseExampleScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T23:23:50.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T23:23:50.098Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HideHandOnGrab.cs",
               "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VR Project\\VR Project\\Assets\\Scripts\\HideHandOnGrab.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\HideHandOnGrab.cs",
@@ -64,12 +79,11 @@
               "RelativeToolTip": "Assets\\Scripts\\HideHandOnGrab.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T21:42:38.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T21:42:38.873Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ElectricTorchOnOff.cs",
               "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VR Project\\VR Project\\Assets\\Electric Torch\\Script\\ElectricTorchOnOff.cs",
               "RelativeDocumentMoniker": "Assets\\Electric Torch\\Script\\ElectricTorchOnOff.cs",
