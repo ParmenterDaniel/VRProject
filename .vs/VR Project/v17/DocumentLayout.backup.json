@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Electric Torch\\Script\\BatteryPowerPickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Electric Torch\\Script\\BatteryPowerPickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Electric Torch\\Script\\ElectricTorchOnOff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Electric Torch\\Script\\ElectricTorchOnOff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Library\\PackageCache\\com.unity.inputsystem@1.7.0\\InputSystem\\Actions\\InputActionState.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.inputsystem@1.7.0\\InputSystem\\Actions\\InputActionState.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Electric Torch\\Script\\BatteryPowerPickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Electric Torch\\Script\\BatteryPowerPickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Electric Torch\\Script\\EmissionMaterialGlassTorchFadeOut.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ButtonController.cs",
               "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Scripts\\ButtonController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ButtonController.cs",
@@ -62,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DoorController.cs",
               "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Scripts\\DoorController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DoorController.cs",
@@ -70,12 +70,11 @@
               "RelativeToolTip": "Assets\\Scripts\\DoorController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T13:33:12.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T13:33:12.1Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ReparentPreservePosition.cs",
               "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Scripts\\ReparentPreservePosition.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ReparentPreservePosition.cs",
@@ -87,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "InputActionState.cs",
               "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Library\\PackageCache\\com.unity.inputsystem@1.7.0\\InputSystem\\Actions\\InputActionState.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.inputsystem@1.7.0\\InputSystem\\Actions\\InputActionState.cs",
@@ -99,15 +98,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "BatteryPowerPickup.cs",
               "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Electric Torch\\Script\\BatteryPowerPickup.cs",
               "RelativeDocumentMoniker": "Assets\\Electric Torch\\Script\\BatteryPowerPickup.cs",
               "ToolTip": "C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Electric Torch\\Script\\BatteryPowerPickup.cs",
               "RelativeToolTip": "Assets\\Electric Torch\\Script\\BatteryPowerPickup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T19:23:32.444Z"
+              "WhenOpened": "2024-11-23T19:23:32.444Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -147,13 +147,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ElectricTorchOnOff.cs",
               "DocumentMoniker": "C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Electric Torch\\Script\\ElectricTorchOnOff.cs",
               "RelativeDocumentMoniker": "Assets\\Electric Torch\\Script\\ElectricTorchOnOff.cs",
               "ToolTip": "C:\\Users\\parme\\Documents\\uni\\VR\\VRProject\\VR Project\\Assets\\Electric Torch\\Script\\ElectricTorchOnOff.cs",
               "RelativeToolTip": "Assets\\Electric Torch\\Script\\ElectricTorchOnOff.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAIBJwC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T13:09:28.332Z",
               "EditorCaption": ""
