@@ -20,10 +20,23 @@ public class ElectricTorchOnOff : MonoBehaviour
     [SerializeField] float _lightTime = 10.0f; // Time before battery runs out
     private float _lightTimer; // Internal timer for battery operation
 
+    // === Added AudioSource and click sound ===
+    private AudioSource audioSource; // Reference to the AudioSource
+    [SerializeField] private AudioClip clickSound; // Sound for toggling the torch
+    // =========================================
+
     private void Awake()
     {
         _batteryPower = FindObjectOfType<BatteryPowerPickup>();
         _emissionMaterialFade = GetComponent<EmissionMaterialGlassTorchFadeOut>();
+
+        // === Initialize AudioSource ===
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        // ================================
     }
 
     void Start()
@@ -74,6 +87,13 @@ public class ElectricTorchOnOff : MonoBehaviour
         {
             TurnOnLight();
         }
+
+        // === Play the click sound ===
+        if (clickSound != null)
+        {
+            audioSource.PlayOneShot(clickSound);
+        }
+        // ============================
     }
 
     void TurnOnLight()
