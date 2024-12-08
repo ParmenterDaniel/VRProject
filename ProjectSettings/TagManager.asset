@@ -8,6 +8,7 @@ TagManager:
   - Right Hand
   - Magazine
   - Gun
+  - Key
   layers:
   - Default
   - TransparentFX

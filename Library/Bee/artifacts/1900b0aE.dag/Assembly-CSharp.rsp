@@ -389,6 +389,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 -analyzer:"E:/Unity/Editor/2022.3.28f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"E:/Unity/Editor/2022.3.28f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/CheckForKey.cs"
 "Assets/Electric Torch/Script/BatteryPowerPickup.cs"
 "Assets/Electric Torch/Script/ChooseLightCookie.cs"
 "Assets/Electric Torch/Script/ElectricTorchOnOff.cs"

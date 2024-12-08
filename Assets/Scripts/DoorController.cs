@@ -20,7 +20,7 @@ public class DoorController : MonoBehaviour
     }
 
     // Rotate the door open
-    private void OpenDoor()
+    public void OpenDoor()
     {
         // Rotate the door around its local Y-axis (using Space.Self)
         door.Rotate(0, rotationAngle, 0, Space.Self);  // Ensure rotation is in local space
