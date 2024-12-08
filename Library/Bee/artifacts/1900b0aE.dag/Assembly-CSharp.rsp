@@ -396,6 +396,7 @@
 "Assets/Lets Make a VR Game/Oculus Hands/Scripts/AnimateHandOnInput.cs"
 "Assets/Magazine.cs"
 "Assets/Nokobot/Modern Guns - Handgun/_Demo Assets/SimpleShoot.cs"
+"Assets/RemoveCollisionWithGun.cs"
 "Assets/Scripts/AudioManager.cs"
 "Assets/Scripts/ButtonInteraction.cs"
 "Assets/Scripts/DoorController.cs"
