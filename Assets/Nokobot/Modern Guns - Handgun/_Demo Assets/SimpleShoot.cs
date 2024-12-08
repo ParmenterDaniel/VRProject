@@ -61,12 +61,20 @@ public class SimpleShoot : MonoBehaviour
 
         source.PlayOneShot(reloadSound);
 
-        magazine.GetComponentInChildren<Collider>().enabled = false;
+        Collider magCollider = e.interactable.GetComponentInChildren<Collider>();
+
+        Transform colliders = transform.parent.Find("Colliders");
+;
+        Collider[] listColliders = colliders.GetComponentsInChildren<Collider>();
+;
+        foreach(Collider activeCollider in listColliders)
+        {
+            Physics.IgnoreCollision(magCollider, activeCollider);
+        }
     }
 
     public void RemoveMagazine(SelectExitEventArgs e)
     {
-        magazine.GetComponentInChildren<Collider>().enabled = true;
         magazine = null;
     }
 
