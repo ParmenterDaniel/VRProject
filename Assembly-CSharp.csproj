@@ -110,10 +110,12 @@
     <Compile Include="Assets\Nokobot\Modern Guns - Handgun\_Demo Assets\SimpleShoot.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Scripts\RandomMovement.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\GameStartMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Electric Torch\Script\EmissionMaterialGlassTorchFadeOut.cs" />
+    <Compile Include="Assets\AIMovement.cs" />
     <Compile Include="Assets\Scripts\FadeScreen.cs" />
     <Compile Include="Assets\CheckForKey.cs" />
     <Compile Include="Assets\Scripts\SetTurnTypeFromPlayerPref.cs" />

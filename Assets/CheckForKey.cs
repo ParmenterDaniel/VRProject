@@ -6,7 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class CheckForKey : MonoBehaviour
 {
     public XRBaseInteractor interactor;
-    public DoorController doorController;
+    //public DoorController doorController;
+    public Animator animator;
     bool opened = false;
 
     private void Start()
@@ -18,7 +19,8 @@ public class CheckForKey : MonoBehaviour
     {
         if (!opened)
         {
-            doorController.OpenDoor();
+            //doorController.OpenDoor();
+            animator.Play("Door Open", 0, 0.0f);
             opened = true;
         }
         
