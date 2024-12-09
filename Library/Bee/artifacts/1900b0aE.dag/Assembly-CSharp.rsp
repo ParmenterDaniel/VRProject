@@ -395,6 +395,7 @@
 "Assets/Electric Torch/Script/ElectricTorchOnOff.cs"
 "Assets/Electric Torch/Script/EmissionMaterialGlassTorchFadeOut.cs"
 "Assets/Lets Make a VR Game/Oculus Hands/Scripts/AnimateHandOnInput.cs"
+"Assets/LightFlicker.cs"
 "Assets/Magazine.cs"
 "Assets/Nokobot/Modern Guns - Handgun/_Demo Assets/SimpleShoot.cs"
 "Assets/RemoveCollisionWithGun.cs"

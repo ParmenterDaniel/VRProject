@@ -7,6 +7,7 @@ public class CheckForKey : MonoBehaviour
 {
     public XRBaseInteractor interactor;
     public DoorController doorController;
+    bool opened = false;
 
     private void Start()
     {
@@ -15,6 +16,11 @@ public class CheckForKey : MonoBehaviour
 
     public void OpenDoorWithKey(SelectEnterEventArgs e)
     {
-        doorController.OpenDoor();
+        if (!opened)
+        {
+            doorController.OpenDoor();
+            opened = true;
+        }
+        
     }
 }
