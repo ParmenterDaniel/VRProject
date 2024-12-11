@@ -6,19 +6,19 @@ using UnityEngine.AI;
 public class AIMovement : MonoBehaviour
 {
     public GameObject player;
-    NavMeshAgent agent;
+    private NavMeshAgent agent;
 
-    Vector3 destPoint;
-    bool walkPointset;
+    private Vector3 destPoint;
+    private bool walkPointSet;
     public float walkRange;
     public LayerMask layer;
-    // Start is called before the first frame update
+    public float sampleRadius = 2.0f;  // Radius to check for valid NavMesh points
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Patrol();
@@ -26,28 +26,35 @@ public class AIMovement : MonoBehaviour
 
     void Patrol()
     {
-        if (!walkPointset) SearchForDestination();
-        if (walkPointset)
+        if (!walkPointSet) SearchForDestination();
+
+        if (walkPointSet)
         {
             agent.SetDestination(destPoint);
             GetComponent<Animation>().Play("Walk");
         }
-        if (Vector3.Distance(transform.position, destPoint) < 10) walkPointset = false;
 
+        // Reset the destination when close to the current destination
+        if (Vector3.Distance(transform.position, destPoint) < 1)
+        {
+            walkPointSet = false;
+        }
     }
 
     void SearchForDestination()
     {
+        // Generate a random point within the defined walk range
         float z = Random.Range(-walkRange, walkRange);
         float x = Random.Range(-walkRange, walkRange);
 
-        destPoint = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
+        Vector3 randomPoint = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
 
-        if (Physics.Raycast(destPoint, Vector3.down, layer))
+        // Validate that the random point is on the NavMesh
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPoint, out hit, sampleRadius, NavMesh.AllAreas))
         {
-            walkPointset = true;
+            destPoint = hit.position;  // Set the valid NavMesh point as the destination
+            walkPointSet = true;
         }
-
-
     }
 }
