@@ -14,14 +14,18 @@ public class AIMovement : MonoBehaviour
     public LayerMask layer;
     public float sampleRadius = 2.0f;  // Radius to check for valid NavMesh points
 
+    bool isWaiting = false;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        //Patrol();
     }
 
     void Update()
     {
-        Patrol();
+       if(!isWaiting)
+            Patrol();
     }
 
     void Patrol()
@@ -32,12 +36,17 @@ public class AIMovement : MonoBehaviour
         {
             agent.SetDestination(destPoint);
             GetComponent<Animation>().Play("Walk");
+            //check player pos
+            //chase player if Vector3.Distance <4?
+            //play run animation
+            //play attack animation if close?
         }
 
         // Reset the destination when close to the current destination
-        if (Vector3.Distance(transform.position, destPoint) < 1)
+        if (Vector3.Distance(transform.position, destPoint) < 0.1f)
         {
             walkPointSet = false;
+            StartCoroutine(Wait2Seconds());
         }
     }
 
@@ -56,5 +65,16 @@ public class AIMovement : MonoBehaviour
             destPoint = hit.position;  // Set the valid NavMesh point as the destination
             walkPointSet = true;
         }
+    }
+
+    IEnumerator Wait2Seconds()
+    {
+        walkPointSet = true;
+        isWaiting = true;
+        GetComponent<Animation>().Play("Idle");
+        yield return new WaitForSeconds(1);
+        isWaiting = false;
+        walkPointSet = false;
+        //Patrol();
     }
 }
