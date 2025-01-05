@@ -7,6 +7,7 @@ public class LightFlicker : MonoBehaviour
     bool isFlickering = false;
     float timeDelay;
     public float maxDelay = 0.5f;
+    public bool canflicker = false;
 
     void Start()
     {
@@ -16,6 +17,9 @@ public class LightFlicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canflicker)
+            return;
+        
         if (!isFlickering)
         {
             StartCoroutine(Flicker());
