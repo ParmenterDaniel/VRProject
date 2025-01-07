@@ -38,6 +38,10 @@ public class GameStartMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+
+
+        // For testing only
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void StartGame()
