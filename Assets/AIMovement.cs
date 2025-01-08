@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class AIMovement : MonoBehaviour
 {
+    public GameObject playerLoc;
     public GameObject player;
     private NavMeshAgent agent;
 
@@ -13,19 +16,32 @@ public class AIMovement : MonoBehaviour
     public float walkRange;
     public LayerMask layer;
     public float sampleRadius = 2.0f;  // Radius to check for valid NavMesh points
+    public float chaseRange = 5.0f;
+    public float attackRange = 2f;
+    public float playerRespawnRange = 0.1f;
+    public GameObject playerRespawn;
 
     bool isWaiting = false;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        //Patrol();
     }
 
     void Update()
     {
-       if(!isWaiting)
-            Patrol();
+        if (!isWaiting)
+        {
+            float distanceToPlayer = Vector3.Distance(transform.position, playerLoc.transform.position);
+            if(distanceToPlayer <= playerRespawnRange)
+            {
+                //player.transform.SetLocalPositionAndRotation(playerRespawn.transform.position);
+                player.transform.position = playerRespawn.transform.position;
+            }
+            else if (distanceToPlayer < attackRange) { AttackPlayer(); }
+            else if (distanceToPlayer < chaseRange) { ChasePlayer(); }
+            else { Patrol(); }
+        }
     }
 
     void Patrol()
@@ -36,10 +52,6 @@ public class AIMovement : MonoBehaviour
         {
             agent.SetDestination(destPoint);
             GetComponent<Animation>().Play("Walk");
-            //check player pos
-            //chase player if Vector3.Distance <4?
-            //play run animation
-            //play attack animation if close?
         }
 
         // Reset the destination when close to the current destination
@@ -76,5 +88,31 @@ public class AIMovement : MonoBehaviour
         isWaiting = false;
         walkPointSet = false;
         //Patrol();
+    }
+
+    void AttackPlayer()
+    {
+        //TODO
+        agent.SetDestination(player.transform.position);
+        int attackAnim = Random.Range(1, 3);
+        switch (attackAnim)
+        {
+            case 1:
+                GetComponent<Animation>().Play("Attack1");
+                break;
+            case 2:
+                GetComponent<Animation>().Play("Attack2");
+                break;
+            default:
+                GetComponent<Animation>().Play("Attack1");
+                break;
+        }
+        
+    }
+    void ChasePlayer()
+    {
+        //TODO
+        agent.SetDestination(player.transform.position);
+        GetComponent<Animation>().Play("Run");
     }
 }

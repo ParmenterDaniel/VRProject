@@ -28,6 +28,9 @@ public class SimpleShoot : MonoBehaviour
     public XRBaseInteractor interactor;
 
     public Magazine magazine;
+    public float rayDistance = 10f;
+    private Color rayColour = Color.red;
+    private bool canDamage = false;
 
 
     void Start()
@@ -42,14 +45,20 @@ public class SimpleShoot : MonoBehaviour
         interactor.selectExited.AddListener(RemoveMagazine);
     }
 
+    private void Update()
+    {
+        Vector3 rayOrigin = barrelLocation.position;
+        Vector3 rayDirection = barrelLocation.forward;   
+        Debug.DrawRay(rayOrigin, rayDirection * rayDistance, rayColour);
+    }
+
     public void TriggerPull()
     {
-        if(magazine && magazine.numBullets >0)
-            gunAnimator.SetTrigger("Fire");
-        else
-        {
-            source.PlayOneShot(noAmmoSound);
-        }
+        if(magazine && magazine.numBullets > 0)       
+            gunAnimator.SetTrigger("Fire");       
+           
+        else       
+            source.PlayOneShot(noAmmoSound);       
     }
 
     public void AddMagazine(SelectEnterEventArgs e)
@@ -100,7 +109,24 @@ public class SimpleShoot : MonoBehaviour
 
         // Create a bullet and add force on it in direction of the barrel
         Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
+     
+        //RAYCAST TO ENEMY & DAMAGE IF HIT
+        Vector3 rayOrigin = barrelLocation.position;
+        Vector3 rayDirection = barrelLocation.forward;
 
+        RaycastHit hit;
+        if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayDistance))
+        {
+            if (hit.collider.name == "Ghoul")
+            {
+                GameObject enemy = hit.collider.gameObject;
+                GhoulHealth health = enemy.GetComponent<GhoulHealth>();
+                if (health != null)
+                {
+                    health.TakeDamage();
+                }
+            }
+        }
     }
 
     //This function creates a casing at the ejection slot
