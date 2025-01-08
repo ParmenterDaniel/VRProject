@@ -11,6 +11,8 @@ public class OpenDoor : MonoBehaviour
     public XRBaseInteractor interactor;
     private bool opened = false;
     public float openRot, speed;
+    public AudioSource source;
+    private bool playsound = true;
 
     void Start()
     {
@@ -23,6 +25,11 @@ public class OpenDoor : MonoBehaviour
 
         if (opened)
         {
+            if (playsound)
+            {
+                source.Play();
+                playsound = false;
+            }
             Vector3 currentRot = transform.localEulerAngles;
             if (currentRot.y != openRot)
             {
