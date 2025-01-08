@@ -8,6 +8,7 @@ public class CheckForKey : MonoBehaviour
     public XRBaseInteractor interactor;
     //public DoorController doorController;
     public Animator animator;
+    public AudioSource audioSource;
     bool opened = false;
 
     private void Start()
@@ -21,6 +22,7 @@ public class CheckForKey : MonoBehaviour
         {
             //doorController.OpenDoor();
             animator.Play("Door Open", 0, 0.0f);
+            audioSource.Play();
             opened = true;
         }
         
