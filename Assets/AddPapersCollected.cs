@@ -7,6 +7,8 @@ public class AddPapersCollected : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject gameManager;
+    public AudioSource audioSource;
+    public AudioClip clip;
 
     public void collectPaper()
     {
@@ -14,6 +16,10 @@ public class AddPapersCollected : MonoBehaviour
         {
             gameManager.GetComponent<GameVariables>().collectPaper();
             Destroy(gameObject);
+        }
+        if(audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
         }
     }
 }

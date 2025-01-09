@@ -20,14 +20,18 @@ public class AIMovement : MonoBehaviour
     public float attackRange = 2f;
     public float playerRespawnRange = 0.1f;
     public GameObject playerRespawn;
+    private AudioSource audioSource;
+    public AudioSource playerAudio;
 
     public PlayerController playerController;
 
     bool isWaiting = false;
+    private bool playMusic = true;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -35,19 +39,22 @@ public class AIMovement : MonoBehaviour
         if (!isWaiting)
         {
             float distanceToPlayer = Vector3.Distance(transform.position, playerLoc.transform.position);
-            if (distanceToPlayer <= playerRespawnRange)
+            if (distanceToPlayer <= playerRespawnRange && !playerController.hidden)
             {
-                //player.transform.SetLocalPositionAndRotation(playerRespawn.transform.position);
+                playerAudio.Play();
                 player.transform.position = playerRespawn.transform.position;
             }
-            else if (distanceToPlayer < attackRange && playerController.hidden != true) { AttackPlayer(); }
-            else if (distanceToPlayer < chaseRange && playerController.hidden != true) { ChasePlayer(); }
+            else if (distanceToPlayer < attackRange && !playerController.hidden) { AttackPlayer(); }
+            else if (distanceToPlayer < chaseRange && !playerController.hidden) { ChasePlayer(); }
             else { Patrol(); }
         }
     }
 
     void Patrol()
     {
+        audioSource.Stop();
+        playMusic = true;
+        agent.speed = 1.05f;
         if (!walkPointSet) SearchForDestination();
 
         if (walkPointSet)
@@ -116,5 +123,9 @@ public class AIMovement : MonoBehaviour
         //TODO
         agent.SetDestination(player.transform.position);
         GetComponent<Animation>().Play("Run");
+        if(playMusic)
+            audioSource.Play();
+        playMusic = false;
+        agent.speed = 1.35f;
     }
 }

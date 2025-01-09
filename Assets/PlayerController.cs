@@ -8,11 +8,11 @@ public class PlayerController : MonoBehaviour
     {
         if (hidden)
         {
-            Debug.Log("Player is hidden");
+            //Debug.Log("Player is hidden");
         }
         else
         {
-            Debug.Log("Player is not hidden");
+            //Debug.Log("Player is not hidden");
         }
     }
 }
