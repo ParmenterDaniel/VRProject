@@ -112,6 +112,7 @@
     <Compile Include="Assets\Lets Make a VR Game\Oculus Hands\Scripts\AnimateHandOnInput.cs" />
     <Compile Include="Assets\AddPapersCollected.cs" />
     <Compile Include="Assets\changeText.cs" />
+    <Compile Include="Assets\box.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Scripts\SetOptionFromUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
@@ -125,7 +126,9 @@
     <Compile Include="Assets\Scripts\GameStartMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Electric Torch\Script\EmissionMaterialGlassTorchFadeOut.cs" />
+    <Compile Include="Assets\OpenLocker.cs" />
     <Compile Include="Assets\damageEnemy.cs" />
+    <Compile Include="Assets\LockerTriggers.cs" />
     <Compile Include="Assets\AIMovement.cs" />
     <Compile Include="Assets\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\FadeScreen.cs" />

@@ -10,6 +10,7 @@ public class AIMovement : MonoBehaviour
     public GameObject playerLoc;
     public GameObject player;
     private NavMeshAgent agent;
+    public GameVariables gameVariables;
 
     private Vector3 destPoint;
     private bool walkPointSet;
@@ -20,25 +21,38 @@ public class AIMovement : MonoBehaviour
     public float attackRange = 2f;
     public float playerRespawnRange = 0.1f;
     public GameObject playerRespawn;
+    public AudioSource chaseAudio;
+    public AudioClip chaseAudioClip;
+    private bool chasing = false;
+    public AudioSource playerSource;
 
     bool isWaiting = false;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        chaseAudio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (!isWaiting)
         {
+            if (gameVariables.isHiding)
+            {
+                Patrol();
+                return;
+            }
             float distanceToPlayer = Vector3.Distance(transform.position, playerLoc.transform.position);
-            if(distanceToPlayer <= playerRespawnRange)
+                       
+            if (distanceToPlayer < attackRange) { AttackPlayer(); }
+            if (distanceToPlayer <= playerRespawnRange)
             {
                 //player.transform.SetLocalPositionAndRotation(playerRespawn.transform.position);
                 player.transform.position = playerRespawn.transform.position;
+                playerSource.Play();
             }
-            else if (distanceToPlayer < attackRange) { AttackPlayer(); }
+            
             else if (distanceToPlayer < chaseRange) { ChasePlayer(); }
             else { Patrol(); }
         }
@@ -46,6 +60,8 @@ public class AIMovement : MonoBehaviour
 
     void Patrol()
     {
+        chasing = false;
+        chaseAudio.Stop();
         if (!walkPointSet) SearchForDestination();
 
         if (walkPointSet)
@@ -108,11 +124,15 @@ public class AIMovement : MonoBehaviour
                 break;
         }
         
+        
     }
     void ChasePlayer()
     {
         //TODO
         agent.SetDestination(player.transform.position);
         GetComponent<Animation>().Play("Run");
+        if(!chasing)
+            chaseAudio.PlayOneShot(chaseAudioClip);
+        chasing = true;
     }
 }

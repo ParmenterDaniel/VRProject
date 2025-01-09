@@ -8,10 +8,15 @@ public class GameVariables : MonoBehaviour
     public int numPapersCollected = 0;
     public GameObject endingWall;
     private bool end = false;
+    public bool isHiding = false;
 
     public void collectPaper()
     {
         numPapersCollected++;
+    }
+    public void hide()
+    {
+        isHiding = !isHiding;
     }
     private void Update()
     {
