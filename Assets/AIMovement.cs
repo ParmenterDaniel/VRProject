@@ -21,6 +21,8 @@ public class AIMovement : MonoBehaviour
     public float playerRespawnRange = 0.1f;
     public GameObject playerRespawn;
 
+    public PlayerController playerController;
+
     bool isWaiting = false;
 
     void Start()
@@ -33,13 +35,13 @@ public class AIMovement : MonoBehaviour
         if (!isWaiting)
         {
             float distanceToPlayer = Vector3.Distance(transform.position, playerLoc.transform.position);
-            if(distanceToPlayer <= playerRespawnRange)
+            if (distanceToPlayer <= playerRespawnRange)
             {
                 //player.transform.SetLocalPositionAndRotation(playerRespawn.transform.position);
                 player.transform.position = playerRespawn.transform.position;
             }
-            else if (distanceToPlayer < attackRange) { AttackPlayer(); }
-            else if (distanceToPlayer < chaseRange) { ChasePlayer(); }
+            else if (distanceToPlayer < attackRange && playerController.hidden != true) { AttackPlayer(); }
+            else if (distanceToPlayer < chaseRange && playerController.hidden != true) { ChasePlayer(); }
             else { Patrol(); }
         }
     }
